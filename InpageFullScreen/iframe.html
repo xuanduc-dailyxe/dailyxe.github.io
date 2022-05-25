@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <a id="admcontent"><img alt="Giới thiệu"/></a>
+    <script>
+        var breakPointMobile = 991; 
+        var adsList = [
+            {
+                "name": "Quảng cáo Vingroup 1",
+                "url": "https://dailyxe.com.vn/",
+                "img": "images_test/banner-mobile-1.gif",
+                "imgbig": "images_test/banner-desktop-1.gif",
+            },
+            {
+                "name": "Quảng cáo Vingroup 2",
+                "url": "https://dailyxe.com.vn/",
+                "img": "images_test/banner-mobile-2.png",
+                "imgbig": "images_test/banner-desktop-2.jpg",
+            },
+            {
+                "name": "Quảng cáo Vingroup 3",
+                "url": "https://dailyxe.com.vn/",
+                "img": "images_test/banner-mobile-3.jpg",
+                "imgbig": "images_test/banner-desktop-3.jpg",
+            }
+        ]
+        // Random Test data
+        const rndInt = Math.floor(Math.random() * 3) + 0; 
+        // Test demo
+        var href = adsList[rndInt].url;
+        var img = adsList[rndInt].img;
+        var imgbig = adsList[rndInt].imgbig;
+
+        // Get width clientWidth to get image mobile or desktop
+        var intFrameWidth = parent.document.body.clientWidth;
+        document.getElementById('admcontent').setAttribute('href', href);
+        document.getElementById('admcontent').querySelector('img').setAttribute('src', intFrameWidth > breakPointMobile ? imgbig : img);
+    </script>
+</body>
+
+</html>
